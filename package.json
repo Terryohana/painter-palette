@@ -1,6 +1,6 @@
 {
-  "homepage": "http://zack09holland.github.io/painter-pallete",
-  "name": "painter-pallete",
+  "homepage": "http://zack09holland.github.io/painter-palette",
+  "name": "painter-palette",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
