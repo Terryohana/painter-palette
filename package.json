@@ -1,5 +1,4 @@
 {
-  "homepage": "http://zack09holland.github.io/painter-palette",
   "name": "painter-palette",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "chroma": "0.0.1",
     "chroma-js": "^2.1.0",
+    "rc-slider": "^9.5.3",
     "react": "^16.13.1",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
@@ -18,9 +18,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

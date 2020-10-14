@@ -9,8 +9,8 @@ class Palette extends Component {
     }
     render() { 
         //Map over colors and create a box corresponding to that color
-        const colorBoxes = this.props.colors.map(palette => (
-            <ColorBox backgroundColor={palette.color} colorName={palette.name}/>
+        const colorBoxes = this.props.palette.colors[300].map(color => (
+            <ColorBox backgroundColor={color.hex} colorName={color.name}/>
         ))
         return ( 
             <div className="Palette">
