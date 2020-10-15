@@ -28,6 +28,10 @@
     display: inline-block;
 
 }
+.NavBar-select-container{
+    display: flex;
+    justify-content: flex-end;
+}
 /* 
     CSS Overrides for the react slider package
 */
