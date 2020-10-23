@@ -22,10 +22,10 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Switch>
-					<Route exact path="/" render={() => <PaletteList list={seedColorPalettes} />} />
+					<Route exact path="/painter-palette" render={() => <PaletteList list={seedColorPalettes} />} />
 					<Route
 						exact
-						path="/palette/:id"
+						path="/painter-palette/palette/:id"
 						render={(routeProps) => (
 							<Palette
 								palette={generatePalette(
