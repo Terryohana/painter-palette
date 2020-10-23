@@ -1,5 +1,5 @@
 .Palette{
-    height: 100vh;
+    height: calc(100vh - 15px);
 }
 .Palette-colors{
     height: 90%;

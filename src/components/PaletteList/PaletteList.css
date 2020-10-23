@@ -1,0 +1,11 @@
+.PaletteList{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+    flex-wrap: wrap;
+    padding-left: 10%;
+    padding-right: 10%;
+}

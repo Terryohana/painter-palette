@@ -1,7 +1,7 @@
 .NavBar{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     height: 6vh;
     
 }
@@ -29,8 +29,8 @@
 
 }
 .NavBar-select-container{
-    display: flex;
-    justify-content: flex-end;
+    margin-right: 1rem;    
+    margin-left: auto;
 }
 /* 
     CSS Overrides for the react slider package
