@@ -25,7 +25,7 @@ class PaletteList extends Component {
 		// 		</div>
 		// 	</Link>
 		const paletteList = list.map((palette) => (
-			<Link style={{ textDecoration: 'none' }} to={`/palette/${palette.id}`}>
+			<Link style={{ textDecoration: 'none' }} to={`painter-palette/palette/${palette.id}`}>
 				<MiniPalette {...palette} />
 			</Link>
 		));
