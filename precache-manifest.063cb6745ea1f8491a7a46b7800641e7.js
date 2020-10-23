@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8f4dafcc739e433f08f8fbf055fd79a6",
+    "revision": "de0cf58e0d3b540c5c89239d0eec5a98",
     "url": "/painter-palette/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/painter-palette/static/css/2.ed590494.chunk.css"
   },
   {
-    "revision": "5d292f6f83b05dba8862",
+    "revision": "eca8b1045883a88dd893",
     "url": "/painter-palette/static/css/main.c1c0f2f5.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/painter-palette/static/js/2.9a1c19c1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5d292f6f83b05dba8862",
-    "url": "/painter-palette/static/js/main.607df437.chunk.js"
+    "revision": "eca8b1045883a88dd893",
+    "url": "/painter-palette/static/js/main.8c5026aa.chunk.js"
   },
   {
     "revision": "9a45a6d0fe834721b081",
