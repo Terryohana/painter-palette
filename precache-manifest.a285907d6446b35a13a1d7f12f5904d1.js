@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "98adb7457bf95eed20a8594dff182671",
+    "revision": "91b8bd8030242cfed01c563e21985288",
     "url": "/painter-palette/index.html"
   },
   {
-    "revision": "e49cd4ccd09e7a8bacfd",
+    "revision": "fcaf5fac596e7b5cb2f0",
     "url": "/painter-palette/static/css/2.ed590494.chunk.css"
   },
   {
-    "revision": "4600cf1c9d3e7f61ff32",
-    "url": "/painter-palette/static/css/main.c1c0f2f5.chunk.css"
+    "revision": "27cc42478ca10683e537",
+    "url": "/painter-palette/static/css/main.95a7acff.chunk.css"
   },
   {
-    "revision": "e49cd4ccd09e7a8bacfd",
-    "url": "/painter-palette/static/js/2.c4e94e88.chunk.js"
+    "revision": "fcaf5fac596e7b5cb2f0",
+    "url": "/painter-palette/static/js/2.5b7ed118.chunk.js"
   },
   {
     "revision": "aa8441a44a2d1c2e3aefc918b30e1928",
-    "url": "/painter-palette/static/js/2.c4e94e88.chunk.js.LICENSE.txt"
+    "url": "/painter-palette/static/js/2.5b7ed118.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4600cf1c9d3e7f61ff32",
-    "url": "/painter-palette/static/js/main.bd04662e.chunk.js"
+    "revision": "27cc42478ca10683e537",
+    "url": "/painter-palette/static/js/main.98ad5a3b.chunk.js"
   },
   {
     "revision": "9a45a6d0fe834721b081",
