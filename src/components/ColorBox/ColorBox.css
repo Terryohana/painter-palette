@@ -1,7 +1,6 @@
 .ColorBox{
     width: 20%;
     height: 25%;
-    /* margin: 0 auto; */
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -59,7 +58,7 @@
     opacity: 0;
 }
 .ColorBox:hover .ColorBox-copy-button{
-    opacity: 100%;
+    opacity: 1;
     transition: opacity .3s ease-in;
 }
 .ColorBox-copy-overlay{
