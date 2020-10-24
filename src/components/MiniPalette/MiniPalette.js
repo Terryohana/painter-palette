@@ -16,7 +16,7 @@ function MiniPalette(props) {
 	));
 	return (
 		//MiniPalette Container
-		<div className={classes.root}>
+		<div className={classes.root} onClick={props.goToPalette}>
 			<div className={classes.colors}>{miniboxes}</div>
 			<h5 className={classes.title}>
 				{paletteName} <span className={classes.emoji}>{emoji}</span>

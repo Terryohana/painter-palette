@@ -9,25 +9,16 @@ class PaletteList extends Component {
 		super(props);
         this.state = {};
     }
-
+    goToPalette(id){
+        console.log("hey")
+        this.props.history.push(`/painter-palette/palette/${id}`)
+    }
 	render() {
         let { list, classes } = this.props;
-        
-        // <Link  to={`/palette/${palete.id}`}>
-		// 		<div className="PaletteList-card" onClick={this.changePalette}>
-		// 			{palete.colors.map((p) => (
-		// 				<div
-		// 					className="PaletteList-colorbox"
-		// 					style={{ background: p.color }}
-		// 				></div>
-		// 			))}
-		// 			<p className="PaletteList-title">{palete.id}</p>
-		// 		</div>
-		// 	</Link>
 		const paletteList = list.map((palette) => (
-			<Link style={{ textDecoration: 'none' }} to={`painter-palette/palette/${palette.id}`}>
-				<MiniPalette {...palette} />
-			</Link>
+			
+				<MiniPalette {...palette} goToPalette={()=>this.goToPalette(palette.id)}/>
+	
 		));
 		return (
 			<div className={classes.root}>

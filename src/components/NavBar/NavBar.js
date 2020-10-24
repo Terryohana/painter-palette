@@ -40,7 +40,7 @@ class NavBar extends Component {
 			<div className="NavBar">
 				<div className="NavBar-logo">
 					<img src={logo} alt="painter palette logo" />
-					<a href="/">painter palette</a>
+					<a href="/painter-palette">painter palette</a>
 				</div>
 				<div className="NavBar-slider-container">
 					<span className="NavBar-slider-textVal">Level: {colorLevel}</span>
