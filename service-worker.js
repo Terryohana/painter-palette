@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/painter-palette/precache-manifest.194e2e0369358a81124d05b66b95c404.js"
+  "/painter-palette/precache-manifest.4ef0526e3305e2334bb825022c059b7b.js"
 );
 
 self.addEventListener('message', (event) => {
