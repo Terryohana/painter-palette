@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./ColorBox.css";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import getTextColor from '../../helpers/getTextColor'
 
 class ColorBox extends Component {
 	constructor(props) {
@@ -22,6 +23,7 @@ class ColorBox extends Component {
 	render() {
 		let { backgroundColor, colorName, colorID, palette, showLink } = this.props;
 		let { showCopyOverlay } = this.state;
+
 		return (
 			<CopyToClipboard text={backgroundColor} onCopy={this.showOverlay}>
 				<div style={{ background: backgroundColor }} className="ColorBox">
@@ -34,22 +36,24 @@ class ColorBox extends Component {
 							showCopyOverlay && "show"
 						}`}
 					>
-						<h1>Copied!</h1>
-						<p>{backgroundColor}</p>
+						<h1 style={{color : getTextColor(backgroundColor)}} >Copied!</h1>
+						<p style={{color : getTextColor(backgroundColor)}}>{backgroundColor}</p>
 					</div>
 
 					<div className="ColorBox-copy-container">
-						<button className="ColorBox-copy-button">Copy</button>
+						<button style={{color : getTextColor(backgroundColor)}} className="ColorBox-copy-button">Copy</button>
 					</div>
 					<div className="ColorBox-description">
-						<span>{colorName}</span>
+						<span style={{color : getTextColor(backgroundColor)}}>
+							{colorName} 
+						</span>
 					</div>
 					{showLink && (
 						<Link
 							to={`/painter-palette/palette/${palette.id}/${colorID}`}
 							onClick={(e) => e.stopPropagation()}
 						>
-							<span className="ColorBox-more-btn">More</span>
+							<span style={{color:getTextColor(backgroundColor)}} className="ColorBox-more-btn">More</span>
 						</Link>
 					)}
 				</div>

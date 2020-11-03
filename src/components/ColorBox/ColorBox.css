@@ -1,4 +1,4 @@
-.ColorBox{
+.ColorBox {
     width: 20%;
     height: 25%;
     display: inline-block;
@@ -6,31 +6,34 @@
     cursor: pointer;
     margin-bottom: -3.7px;
 }
+
 /* 
     CSS for Single Color Palette ColorBox's
 */
-.SingleColorPalette .ColorBox{
+
+.SingleColorPalette .ColorBox {
     height: 50%;
 }
 
-.ColorBox.go-back{
+.ColorBox.go-back {
     background-color: black;
 }
 
 /* 
     CSS for the Name and More Button
 */
-.ColorBox-description{
+
+.ColorBox-description {
     text-transform: uppercase;
     position: absolute;
     margin-left: 10px;
     margin-bottom: 10px;
     left: 0;
     bottom: 0;
-    color: white;
     font-size: 13px;
 }
-.ColorBox-more-btn{
+
+.ColorBox-more-btn {
     width: 60px;
     height: 30px;
     line-height: 30px;
@@ -39,19 +42,19 @@
     border: none;
     right: 0;
     bottom: 0;
-    color: white;
     background: rgba(255, 255, 255, 0.2);
     text-transform: uppercase;
     font-size: 13px;
     z-index: 1;
 }
+
 /* 
     CSS for the button used to copy the color code
     - includes hover effect
     - Copy overlay functionality
 */
-.ColorBox-go-back-button,
-.ColorBox-copy-button{
+
+.ColorBox-go-back-button, .ColorBox-copy-button {
     cursor: pointer;
     display: inline-block;
     position: absolute;
@@ -68,28 +71,33 @@
     color: white;
     text-transform: uppercase;
 }
-.ColorBox-copy-button{
+
+.ColorBox-copy-button {
     opacity: 0;
 }
-.ColorBox:hover .ColorBox-copy-button{
+
+.ColorBox:hover .ColorBox-copy-button {
     opacity: 1;
     transition: opacity .3s ease-in;
 }
-.ColorBox-copy-overlay{
+
+.ColorBox-copy-overlay {
     z-index: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
     transform: scale(0.1);
 }
-.ColorBox-copy-overlay.show{
+
+.ColorBox-copy-overlay.show {
     position: absolute;
     opacity: 1;
     transform: scale(50);
     transition: transform 0.75s ease-in-out;
     z-index: 5;
 }
-.ColorBox-copy-overlay-content{
+
+.ColorBox-copy-overlay-content {
     overflow-y: hidden;
     overflow-x: hidden;
     position: fixed;
@@ -106,13 +114,15 @@
     opacity: 0;
     color: white;
 }
-.ColorBox-copy-overlay-content.show{
+
+.ColorBox-copy-overlay-content.show {
     transition: all 0.5s ease-in-out 0.3s;
     opacity: 1;
     z-index: 5;
     transform: scale(1);
 }
-.ColorBox-copy-overlay-content h1{
+
+.ColorBox-copy-overlay-content h1 {
     width: 100%;
     padding: 1rem;
     text-align: center;
@@ -121,6 +131,7 @@
     text-shadow: 1px 2px black;
     text-transform: uppercase;
 }
-.ColorBox-copy-overlay-content p{
+
+.ColorBox-copy-overlay-content p {
     font-weight: 100;
 }
