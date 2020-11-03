@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./ColorBox.css";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+
 class ColorBox extends Component {
 	constructor(props) {
 		super(props);
@@ -18,7 +20,7 @@ class ColorBox extends Component {
 		}, 1000);
 	}
 	render() {
-		let { backgroundColor, colorName } = this.props;
+		let { backgroundColor, colorName, colorID, palette, showLink } = this.props;
 		let { showCopyOverlay } = this.state;
 		return (
 			<CopyToClipboard text={backgroundColor} onCopy={this.showOverlay}>
@@ -27,7 +29,10 @@ class ColorBox extends Component {
 						style={{ background: backgroundColor }}
 						className={`ColorBox-copy-overlay ${showCopyOverlay && "show"}`}
 					/>
-					<div className={`ColorBox-copy-overlay-content ${showCopyOverlay && "show"}`}
+					<div
+						className={`ColorBox-copy-overlay-content ${
+							showCopyOverlay && "show"
+						}`}
 					>
 						<h1>Copied!</h1>
 						<p>{backgroundColor}</p>
@@ -39,7 +44,14 @@ class ColorBox extends Component {
 					<div className="ColorBox-description">
 						<span>{colorName}</span>
 					</div>
-					<span className="ColorBox-more-btn">More</span>
+					{showLink && (
+						<Link
+							to={`/painter-palette/palette/${palette.id}/${colorID}`}
+							onClick={(e) => e.stopPropagation()}
+						>
+							<span className="ColorBox-more-btn">More</span>
+						</Link>
+					)}
 				</div>
 			</CopyToClipboard>
 		);

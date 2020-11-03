@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React from "react";
 import styles from "../../styles/MiniPalette";
 import { withStyles } from "@material-ui/styles";
