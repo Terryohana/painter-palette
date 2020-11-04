@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ColorBox from "../ColorBox/ColorBox";
-import "./Palette.css";
+import { withStyles } from "@material-ui/styles";
+import styles from '../../styles/Palette'
+
 import Navbar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 
@@ -21,7 +23,7 @@ class Palette extends Component {
 		this.setState({ colorFormat: val });
 	}
 	render() {
-		let { palette } = this.props;
+		let { palette, classes } = this.props;
 		let { colorLevel, colorFormat } = this.state;
 		//Map over colors and create a box corresponding to that color
 
@@ -37,7 +39,7 @@ class Palette extends Component {
 			/>
 		));
 		return (
-			<div className="Palette">
+			<div className={classes.root}>
 				<Navbar
 					changeColorLevel={this.changeColorLevel}
 					changeColorFormat={this.changeColorFormat}
@@ -45,7 +47,7 @@ class Palette extends Component {
 					showSlider={true}
 				/>
 
-				<div className="Palette-colors">{colorBoxes}</div>
+				<div className={classes.paletteColors}>{colorBoxes}</div>
 
 				<Footer
 					paletteName={palette.paletteName}
@@ -56,4 +58,4 @@ class Palette extends Component {
 	}
 }
 
-export default Palette;
+export default withStyles(styles)(Palette);

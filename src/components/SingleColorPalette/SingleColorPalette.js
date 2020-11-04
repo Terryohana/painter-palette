@@ -49,14 +49,14 @@ class SingleColorPalette extends Component {
 				<div className="Palette-colors">
 					{colorBoxes}
 					<div className="go-back ColorBox">
-						<div className="ColorBox-copy-container">
-                        <Link
+						<Link
 							to={`/painter-palette/palette/${palette.id}`}
 							onClick={(e) => e.stopPropagation()}
 						>
-							<button className="ColorBox-go-back-button">Go Back</button>
+							<div className="ColorBox-copy-container">
+								<button className="ColorBox-go-back-button">Go Back</button>
+							</div>
 						</Link>
-						</div>
 					</div>
 				</div>
 				<Footer
