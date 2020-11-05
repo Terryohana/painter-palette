@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/painter-palette/static/css/main.8abcb22f.chunk.css",
-    "main.js": "/painter-palette/static/js/main.dfe20752.chunk.js",
-    "main.js.map": "/painter-palette/static/js/main.dfe20752.chunk.js.map",
+    "main.css": "/painter-palette/static/css/main.9cceff48.chunk.css",
+    "main.js": "/painter-palette/static/js/main.e7558277.chunk.js",
+    "main.js.map": "/painter-palette/static/js/main.e7558277.chunk.js.map",
     "runtime-main.js": "/painter-palette/static/js/runtime-main.af279992.js",
     "runtime-main.js.map": "/painter-palette/static/js/runtime-main.af279992.js.map",
     "static/css/2.ed590494.chunk.css": "/painter-palette/static/css/2.ed590494.chunk.css",
-    "static/js/2.13abe0f0.chunk.js": "/painter-palette/static/js/2.13abe0f0.chunk.js",
-    "static/js/2.13abe0f0.chunk.js.map": "/painter-palette/static/js/2.13abe0f0.chunk.js.map",
+    "static/js/2.b08e5ff0.chunk.js": "/painter-palette/static/js/2.b08e5ff0.chunk.js",
+    "static/js/2.b08e5ff0.chunk.js.map": "/painter-palette/static/js/2.b08e5ff0.chunk.js.map",
     "index.html": "/painter-palette/index.html",
-    "precache-manifest.4ef0526e3305e2334bb825022c059b7b.js": "/painter-palette/precache-manifest.4ef0526e3305e2334bb825022c059b7b.js",
+    "precache-manifest.ea0c10e94962681fea5a4e72291b5620.js": "/painter-palette/precache-manifest.ea0c10e94962681fea5a4e72291b5620.js",
     "service-worker.js": "/painter-palette/service-worker.js",
     "static/css/2.ed590494.chunk.css.map": "/painter-palette/static/css/2.ed590494.chunk.css.map",
-    "static/css/main.8abcb22f.chunk.css.map": "/painter-palette/static/css/main.8abcb22f.chunk.css.map",
-    "static/js/2.13abe0f0.chunk.js.LICENSE.txt": "/painter-palette/static/js/2.13abe0f0.chunk.js.LICENSE.txt",
+    "static/css/main.9cceff48.chunk.css.map": "/painter-palette/static/css/main.9cceff48.chunk.css.map",
+    "static/js/2.b08e5ff0.chunk.js.LICENSE.txt": "/painter-palette/static/js/2.b08e5ff0.chunk.js.LICENSE.txt",
     "static/media/logo.png": "/painter-palette/static/media/logo.ecea6c3a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.af279992.js",
     "static/css/2.ed590494.chunk.css",
-    "static/js/2.13abe0f0.chunk.js",
-    "static/css/main.8abcb22f.chunk.css",
-    "static/js/main.dfe20752.chunk.js"
+    "static/js/2.b08e5ff0.chunk.js",
+    "static/css/main.9cceff48.chunk.css",
+    "static/js/main.e7558277.chunk.js"
   ]
 }
