@@ -1,59 +1,57 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./ColorBox.css";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import getTextColor from '../../helpers/getTextColor'
+import { withStyles } from "@material-ui/styles";
+import styles from '../../styles/ColorBoxStyles'
+import classNames from "classnames";
 
 class ColorBox extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showCopyOverlay: false,
+			isCopied: false,
 		};
 		this.showOverlay = this.showOverlay.bind(this);
 	}
 	// Show overlay when a color box has been clicked on
 	//   - Set the state to show the overlay
 	showOverlay() {
-		this.setState({ showCopyOverlay: true });
+		this.setState({ isCopied: true });
 		setTimeout(() => {
-			this.setState({ showCopyOverlay: false });
+			this.setState({ isCopied: false });
 		}, 1000);
 	}
 	render() {
-		let { backgroundColor, colorName, colorID, palette, showLink } = this.props;
-		let { showCopyOverlay } = this.state;
+		let { backgroundColor, colorName, colorID, palette, showFullPalette, classes } = this.props;
+		let { isCopied } = this.state;
 
 		return (
 			<CopyToClipboard text={backgroundColor} onCopy={this.showOverlay}>
-				<div style={{ background: backgroundColor }} className="ColorBox">
+				<div style={{ background: backgroundColor }} className={classes.ColorBox}>
 					<div
 						style={{ background: backgroundColor }}
-						className={`ColorBox-copy-overlay ${showCopyOverlay && "show"}`}
+						className={classNames(classes.copyOverlay, {[classes.showOverlay]: isCopied})}
 					/>
-					<div
-						className={`ColorBox-copy-overlay-content ${
-							showCopyOverlay && "show"
-						}`}
-					>
+					<div className={classNames(classes.copyMessage, {[classes.showMessage]: isCopied})}>
 						<h1 style={{color : getTextColor(backgroundColor)}} >Copied!</h1>
 						<p style={{color : getTextColor(backgroundColor)}}>{backgroundColor}</p>
 					</div>
 
-					<div className="ColorBox-copy-container">
-						<button style={{color : getTextColor(backgroundColor)}} className="ColorBox-copy-button">Copy</button>
+					<div>
+						<button style={{color : getTextColor(backgroundColor)}} className={classes.copyBtn}>Copy</button>
 					</div>
-					<div className="ColorBox-description">
+					<div className={classes.description}>
 						<span style={{color : getTextColor(backgroundColor)}}>
 							{colorName} 
 						</span>
 					</div>
-					{showLink && (
+					{showFullPalette && (
 						<Link
 							to={`/painter-palette/palette/${palette.id}/${colorID}`}
 							onClick={(e) => e.stopPropagation()}
 						>
-							<span style={{color:getTextColor(backgroundColor)}} className="ColorBox-more-btn">More</span>
+							<span style={{color:getTextColor(backgroundColor)}} className={classes.moreBtn}>More</span>
 						</Link>
 					)}
 				</div>
@@ -62,4 +60,4 @@ class ColorBox extends Component {
 	}
 }
 
-export default ColorBox;
+export default withStyles(styles) (ColorBox);

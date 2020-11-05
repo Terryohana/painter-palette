@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ColorBox from "../ColorBox/ColorBox";
 import { withStyles } from "@material-ui/styles";
-import styles from '../../styles/Palette'
+import styles from '../../styles/PaletteStyles'
 
 import Navbar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
@@ -35,11 +35,11 @@ class Palette extends Component {
 				backgroundColor={color[colorFormat]}
 				colorName={color.name}
 				colorID={color.id}
-				showLink={true}
+				showFullPalette={true}
 			/>
 		));
 		return (
-			<div className={classes.root}>
+			<div className={classes.palette}>
 				<Navbar
 					changeColorLevel={this.changeColorLevel}
 					changeColorFormat={this.changeColorFormat}

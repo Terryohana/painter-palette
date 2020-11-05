@@ -1,7 +1,7 @@
 import { withStyles } from "@material-ui/styles";
 import React, { Component } from "react";
 import MiniPalette from "../MiniPalette/MiniPalette";
-import styles from '../../styles/PaletteList'
+import styles from '../../styles/PaletteListStyles'
 
 class PaletteList extends Component {
 	constructor(props) {
@@ -9,7 +9,6 @@ class PaletteList extends Component {
         this.state = {};
     }
     goToPalette(id){
-        console.log("hey")
         this.props.history.push(`/painter-palette/palette/${id}`)
     }
 	render() {

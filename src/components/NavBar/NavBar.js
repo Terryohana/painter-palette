@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Select, MenuItem } from "@material-ui/core";
 import Snackbar from "@material-ui/core/Snackbar";
 import Button from "@material-ui/core/Button";
-
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import "./NavBar.css";
+import {withStyles} from '@material-ui/styles'
+import styles from '../../styles/NavbarStyles'
 import logo from "../../images/logo.png";
 
 class NavBar extends Component {
@@ -33,17 +33,17 @@ class NavBar extends Component {
 		this.openSnackBar();
 	}
 	render() {
-		let { colorLevel, changeColorLevel, showSlider } = this.props;
+		let { colorLevel, changeColorLevel, showSlider, classes } = this.props;
 		return (
-			<div className="NavBar">
-				<div className="NavBar-logo">
+			<div className={classes.NavBar}>
+				<div className={classes.NavBarLogo}>
 					<img src={logo} alt="painter palette logo" />
 					<a href="/painter-palette">painter palette</a>
 				</div>
 				{showSlider && (
-					<div className="NavBar-slider-container">
-						<span className="NavBar-slider-textVal">Level: {colorLevel}</span>
-						<div className="NavBar-palette-slider">
+					<div>
+						<span>Level: {colorLevel}</span>
+						<div className={classes.paletteSlider}>
 							<Slider
 								defaultValue={colorLevel}
 								min={100}
@@ -55,7 +55,7 @@ class NavBar extends Component {
 					</div>
 				)}
 
-				<div className="NavBar-select-container">
+				<div className={classes.selectContainer}>
 					<Select
 						value={this.state.colorFormat}
 						onChange={this.handleColorFormatChange}
@@ -92,4 +92,4 @@ class NavBar extends Component {
 	}
 }
 
-export default NavBar;
+export default withStyles(styles)(NavBar);
