@@ -3,6 +3,9 @@ export default {
         display: "flex",
         alignItems: "center",
         height: "6vh",
+        "& a":{
+            fontWeight: "bold"
+        }
     },
     NavBarLogo: {
         padding: "0 15px",

@@ -33,12 +33,15 @@ class NavBar extends Component {
 		this.openSnackBar();
 	}
 	render() {
-		let { colorLevel, changeColorLevel, showSlider, classes } = this.props;
+		let { colorLevel, changeColorLevel, showSlider, showColorFormatSelector, classes } = this.props;
 		return (
 			<div className={classes.NavBar}>
 				<div className={classes.NavBarLogo}>
 					<img src={logo} alt="painter palette logo" />
 					<a href="/painter-palette">painter palette</a>
+				</div>
+				<div>
+					<span>Create A Palette</span>
 				</div>
 				{showSlider && (
 					<div>
@@ -54,18 +57,19 @@ class NavBar extends Component {
 						</div>
 					</div>
 				)}
-
-				<div className={classes.selectContainer}>
-					<Select
-						value={this.state.colorFormat}
-						onChange={this.handleColorFormatChange}
-					>
-						<MenuItem value="hex">HEX - #ffff</MenuItem>
-						<MenuItem value="rgb">RGB - rgb(255, 255, 255)</MenuItem>
-						<MenuItem value="rgba">RGBA - rgba(255, 255, 255, 0.2)</MenuItem>
-					</Select>
-				</div>
-
+				{showColorFormatSelector && (
+					<div className={classes.selectContainer}>
+						<Select
+							value={this.state.colorFormat}
+							onChange={this.handleColorFormatChange}
+						>
+							<MenuItem value="hex">HEX - #ffff</MenuItem>
+							<MenuItem value="rgb">RGB - rgb(255, 255, 255)</MenuItem>
+							<MenuItem value="rgba">RGBA - rgba(255, 255, 255, 0.2)</MenuItem>
+						</Select>
+					</div>
+				)}
+				
 				<Snackbar
 					anchorOrigin={{
 						vertical: "bottom",

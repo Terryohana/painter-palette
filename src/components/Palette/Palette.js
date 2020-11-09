@@ -45,6 +45,7 @@ class Palette extends Component {
 					changeColorFormat={this.changeColorFormat}
 					colorLevel={this.state.colorLevel}
 					showSlider={true}
+					showColorFormatSelector={true}
 				/>
 
 				<div className={classes.paletteColors}>{colorBoxes}</div>

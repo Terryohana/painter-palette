@@ -1,9 +1,11 @@
 export default {
 	palette: {
-		height: "calc(100vh - 15px)",
+		height: "100vh",
+		display: "flex",
+		flexDirection: "column"
 	},
 	paletteColors: {
-		height: "90%",
+		height: "calc(90%)",
 		display: "flex",
 		overflow: "hidden",
 		flexWrap: "wrap",

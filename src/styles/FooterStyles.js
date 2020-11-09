@@ -1,10 +1,11 @@
 export default {
     Footer :{
-        height: "30px",
-        padding: "10px",
+        // height:"5vh",
+        margin: "10px",
         display: "flex",
         justifyContent: "flex-end",
-        alignItems: "center"
+        alignItems: "center",
+        overflowY: "hidden"
     },
     paletteName: {
         fontWeight: "bold",

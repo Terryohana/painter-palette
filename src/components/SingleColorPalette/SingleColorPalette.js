@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import ColorBox from "../ColorBox/ColorBox";
 import Navbar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import {withStyles} from '@material-ui/styles'
-import styles from '../../styles/PaletteStyles'
+import { withStyles } from "@material-ui/styles";
+import styles from "../../styles/PaletteStyles";
 
 class SingleColorPalette extends Component {
 	constructor(props) {
@@ -47,7 +47,11 @@ class SingleColorPalette extends Component {
 		));
 		return (
 			<div className={classes.palette}>
-				<Navbar changeColorFormat={this.changeColorFormat} showSlider={false} />
+				<Navbar
+					changeColorFormat={this.changeColorFormat}
+					showSlider={false}
+					showColorFormatSelector={true}
+				/>
 				<div className={classes.paletteColors}>
 					{colorBoxes}
 					<div className={classes.goBack}>
