@@ -20,7 +20,7 @@ const styles = theme => ({
 		display: "flex",
 		alignItems: "center",
 		width: "100%",
-		padding: "0 8px",
+		// padding: "0 8px",
 		...theme.mixins.toolbar,
 		justifyContent: "flex-end",
 	},
@@ -58,6 +58,8 @@ const styles = theme => ({
 		height: 48,
 		padding: "0 30px",
 		boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+		
 	},
+
 });
 export default styles;
