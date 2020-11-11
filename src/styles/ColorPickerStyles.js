@@ -8,5 +8,10 @@ export default {
 		padding: "1rem",
 		marginTop: "1rem",
 		fontSize: "1em"
-	}
+	},
+	colorNameForm:{
+		width: "100%",
+		height: "70px",
+		marginTop: "1rem",
+		}
 }

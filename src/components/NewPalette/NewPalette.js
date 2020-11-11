@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+
 import ColorPicker from "../ColorPicker/ColorPicker";
 import styles from "../../styles/NewPaletteStyles";
 import seedColors from "../../seedColorPalettes";
@@ -25,6 +26,8 @@ class NewPalette extends Component {
 		};
 		this.handleDrawerOpen = this.handleDrawerOpen.bind(this);
 		this.handleDrawerClose = this.handleDrawerClose.bind(this);
+    this.addColorToPalette = this.addColorToPalette.bind(this);
+    this.removeColorFromPalette = this.removeColorFromPalette.bind(this);
 	}
 
 	handleDrawerOpen() {
@@ -38,7 +41,19 @@ class NewPalette extends Component {
 		this.setState(({ colors }) => ({
 			colors: arrayMove(colors, oldIndex, newIndex),
 		}));
-	};
+  };
+
+  addColorToPalette(newColor){
+    this.setState({
+      colors: [...this.state.colors,newColor],
+      newColorName: ""
+    });
+  }
+  removeColorFromPalette(colorName){
+    console.log(colorName)
+
+    this.setState({ colors : this.state.colors.filter(color => color.name !== colorName)  });
+  }
 	render() {
 		const { classes } = this.props;
 		const { drawerOpen, colors } = this.state;
@@ -67,11 +82,13 @@ class NewPalette extends Component {
 					<Divider />
 
 					<div className={classes.container}>
-						<Typography variant="h5" gutterBottom>
-							Design Your Palette
+						<Typography variant="h6" gutterBottom>
+							Design Your Color Box
 						</Typography>
 
-						<ColorPicker />
+						<ColorPicker colors={colors} addColor={this.addColorToPalette}/>
+
+            
 					</div>
 				</Drawer>
 				<main
@@ -83,7 +100,7 @@ class NewPalette extends Component {
 
 					<NewPaletteList
 						colors={colors}
-						// removeColor={this.removeColor}
+						removeColor={this.removeColorFromPalette}
 						axis="xy"
 						onSortEnd={this.onSortEnd}
 						distance={20}

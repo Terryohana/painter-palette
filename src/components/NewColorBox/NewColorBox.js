@@ -6,7 +6,7 @@ import getTextColor from "../../helpers/getTextColor";
 import { SortableElement } from "react-sortable-hoc";
 
 const NewColorBox = SortableElement(props =>{
-    let{classes, backgroundColor, name} = props
+    let{classes, backgroundColor, name, handleClick} = props
     return (
         <div
             className={classes.root}
@@ -17,7 +17,7 @@ const NewColorBox = SortableElement(props =>{
                 className={classes.content}
             >
                 <span>{name}</span>
-                <DeleteIcon className={classes.deleteIcon} />
+                <DeleteIcon className={classes.deleteIcon} onClick={handleClick}/>
             </div>
         </div>
     );

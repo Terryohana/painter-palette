@@ -11,7 +11,7 @@ const NewPaletteList = SortableContainer(({ colors, removeColor }) => {
           key={color.name}
           backgroundColor={color.color}
           name={color.name}
-        //   handleClick={() => removeColor(color.name)}
+          handleClick={() => removeColor(color.name)}
         />
       ))}
     </div>
