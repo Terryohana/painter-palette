@@ -40,9 +40,6 @@ class NavBar extends Component {
 					<img src={logo} alt="painter palette logo" />
 					<a href="/painter-palette">painter palette</a>
 				</div>
-				<div>
-					<span>Create A Palette</span>
-				</div>
 				{showSlider && (
 					<div>
 						<span>Level: {colorLevel}</span>

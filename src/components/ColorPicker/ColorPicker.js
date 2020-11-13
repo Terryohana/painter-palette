@@ -16,7 +16,6 @@ class ColorPicker extends Component {
 	componentDidMount() {
 		//Need to validate if the color is unique and if the color name entered
 		//is unique
-		console.log(this.props.colors)
 		ValidatorForm.addValidationRule("isColorNameUnique", (value) => 
 			this.props.colors.every(
 				({ name }) => name.toLowerCase() !== value.toLowerCase()
@@ -67,9 +66,9 @@ class ColorPicker extends Component {
 						value={newColorName}
 						validators={["required", "isColorNameUnique", "isColorUnique"]}
 						errorMessages={[
-							"this field is required",
-							"color name taken",
-							"color already used",
+							"This field is required",
+							"Color name taken",
+							"Color already used",
 						]}
 					/>
 					<Button

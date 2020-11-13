@@ -11,18 +11,32 @@ import { withStyles } from "@material-ui/styles";
 
 import classNames from "classnames";
 import styles from "../../styles/NewPaletteNavStyles";
-import { CssBaseline } from "@material-ui/core";
+import PaletteNameForm from "../PaletteNameForm/PaletteNameForm";
 
 class NewPaletteNav extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			formShowing: false,
+		};
+		this.showForm = this.showForm.bind(this);
+		this.hideForm = this.hideForm.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this)
+	}
+	showForm() {
+		this.setState({ formShowing: true });
+	}
+	hideForm() {
+		this.setState({ formShowing: false });
+	}
+	handleSubmit(newPalette){
+		this.props.savePalette(newPalette)
 	}
 	render() {
-		let { classes, drawerOpen, handleDrawerOpen } = this.props;
+		const { classes, palettes, drawerOpen, handleDrawerOpen, savePalette } = this.props;
+		const { formShowing } = this.state;
 		return (
 			<div className={classes.root}>
-                {/* <CssBaseline /> */}
 				<AppBar
 					position="fixed"
 					color="default"
@@ -47,7 +61,7 @@ class NewPaletteNav extends Component {
 						</Typography>
 					</Toolbar>
 					<div className={classes.navBtns}>
-                    <Link to='/painter-palette/'>
+						<Link to="/painter-palette/">
 							<Button
 								className={classes.button}
 								variant="contained"
@@ -55,16 +69,26 @@ class NewPaletteNav extends Component {
 							>
 								Go Back
 							</Button>
-                        </Link>
-							<Button
-								className={classes.button}
-								variant="contained"
-								color="primary"
-							>
-								Save Palette
-							</Button>
+						</Link>
+						<Button
+							className={classes.button}
+							variant="contained"
+							color="primary"
+							onClick={this.showForm}
+						>
+							Save Palette
+						</Button>
 					</div>
 				</AppBar>
+				{formShowing && (
+					<PaletteNameForm
+						// savePalette = {savePalette}
+						palettes = {palettes}
+						openDialog={formShowing}
+						closeDialog={this.hideForm}
+						submitPalette={this.handleSubmit}
+					/>
+				)}
 			</div>
 		);
 	}

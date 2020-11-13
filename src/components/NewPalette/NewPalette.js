@@ -22,12 +22,14 @@ class NewPalette extends Component {
 		super(props);
 		this.state = {
 			drawerOpen: true,
-			colors: seedColors[0].colors,
+      colors: seedColors[0].colors,
+      paletteName: ""
 		};
 		this.handleDrawerOpen = this.handleDrawerOpen.bind(this);
 		this.handleDrawerClose = this.handleDrawerClose.bind(this);
-    this.addColorToPalette = this.addColorToPalette.bind(this);
+		this.addColorToPalette = this.addColorToPalette.bind(this);
     this.removeColorFromPalette = this.removeColorFromPalette.bind(this);
+    this.saveNewPalette = this.saveNewPalette.bind(this)
 	}
 
 	handleDrawerOpen() {
@@ -36,31 +38,48 @@ class NewPalette extends Component {
 	handleDrawerClose() {
 		this.setState({ drawerOpen: false });
 	}
-
+  //Function to control the sorting of the colorboxs when they are dragged to a new
+  //position
 	onSortEnd = ({ oldIndex, newIndex }) => {
 		this.setState(({ colors }) => ({
 			colors: arrayMove(colors, oldIndex, newIndex),
 		}));
-  };
-
-  addColorToPalette(newColor){
-    this.setState({
-      colors: [...this.state.colors,newColor],
-      newColorName: ""
-    });
+	};
+  //Add a colorbox to the newly created palette
+	addColorToPalette(newColor) {
+		this.setState({
+			colors: [...this.state.colors, newColor],
+			newColorName: "",
+		});
   }
-  removeColorFromPalette(colorName){
-    console.log(colorName)
-
-    this.setState({ colors : this.state.colors.filter(color => color.name !== colorName)  });
+  //Remove colorbox from newly created palette
+	removeColorFromPalette(colorName) {
+		this.setState({
+			colors: this.state.colors.filter((color) => color.name !== colorName),
+		});
   }
+  //Save a newly created palette
+  saveNewPalette(paletteName){
+    // let newName = this.state.paletteName
+    let newName = paletteName
+    const newPalette = {
+      paletteName: newName,
+      id: newName.toLowerCase().replace(/ /g, "-"),
+      colors: this.state.colors
+    }
+    this.props.savePalette(newPalette)
+    this.props.history.push('/painter-palette')
+  }
+
 	render() {
-		const { classes } = this.props;
-		const { drawerOpen, colors } = this.state;
+		const { classes, palettes } = this.props;
+		const { drawerOpen, colors  } = this.state;
 
-		return (
+    return (
 			<div className={classes.root}>
 				<NewPaletteNav
+          palettes ={palettes}
+          savePalette={this.saveNewPalette}
 					drawerOpen={drawerOpen}
 					handleDrawerOpen={this.handleDrawerOpen}
 				/>
@@ -86,9 +105,7 @@ class NewPalette extends Component {
 							Design Your Color Box
 						</Typography>
 
-						<ColorPicker colors={colors} addColor={this.addColorToPalette}/>
-
-            
+						<ColorPicker colors={colors} addColor={this.addColorToPalette} />
 					</div>
 				</Drawer>
 				<main

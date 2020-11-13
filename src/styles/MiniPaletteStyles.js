@@ -39,4 +39,13 @@ export default {
       position: "relative",
       marginBottom: "-3.5px"
     },
+    deleteIcon:{
+
+      "&:hover":{
+        borderRadius: "50%",
+        color:"white",
+        backgroundColor:"red",
+        transform:"scale(1.2,1.2)"
+      }
+    }
   };

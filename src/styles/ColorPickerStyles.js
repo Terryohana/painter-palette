@@ -6,7 +6,6 @@ export default {
     addBtn:{
 		width: "100%",
 		padding: "1rem",
-		marginTop: "1rem",
 		fontSize: "1em"
 	},
 	colorNameForm:{
