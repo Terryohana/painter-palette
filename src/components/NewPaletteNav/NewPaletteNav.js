@@ -33,7 +33,7 @@ class NewPaletteNav extends Component {
 		this.props.savePalette(newPalette)
 	}
 	render() {
-		const { classes, palettes, drawerOpen, handleDrawerOpen, savePalette } = this.props;
+		const { classes, palettes, drawerOpen, handleDrawerOpen } = this.props;
 		const { formShowing } = this.state;
 		return (
 			<div className={classes.root}>

@@ -9,7 +9,6 @@ const styles = {
         position: "relative",
         cursor: "pointer",
         marginBottom: "-3.5px",
-       
         [mediaQuery.size("lg")]: {
             width: "25%",
             height: "20%"

@@ -4,8 +4,8 @@ import Snackbar from "@material-ui/core/Snackbar";
 import Button from "@material-ui/core/Button";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import {withStyles} from '@material-ui/styles'
-import styles from '../../styles/NavbarStyles'
+import { withStyles } from "@material-ui/styles";
+import styles from "../../styles/NavbarStyles";
 import logo from "../../images/logo.png";
 
 class NavBar extends Component {
@@ -33,40 +33,48 @@ class NavBar extends Component {
 		this.openSnackBar();
 	}
 	render() {
-		let { colorLevel, changeColorLevel, showSlider, showColorFormatSelector, classes } = this.props;
+		let {
+			colorLevel,
+			changeColorLevel,
+			showSlider,
+			showColorFormatSelector,
+			classes,
+		} = this.props;
 		return (
 			<div className={classes.NavBar}>
 				<div className={classes.NavBarLogo}>
 					<img src={logo} alt="painter palette logo" />
 					<a href="/painter-palette">painter palette</a>
 				</div>
-				{showSlider && (
-					<div>
-						<span>Level: {colorLevel}</span>
-						<div className={classes.paletteSlider}>
-							<Slider
-								defaultValue={colorLevel}
-								min={100}
-								max={900}
-								step={100}
-								onAfterChange={changeColorLevel}
-							/>
+					{showSlider && (
+						<div className={classes.sliderContainer}>
+							<span>Level: {colorLevel}</span>
+							<div className={classes.paletteSlider}>
+								<Slider
+									defaultValue={colorLevel}
+									min={100}
+									max={900}
+									step={100}
+									onAfterChange={changeColorLevel}
+								/>
+							</div>
 						</div>
-					</div>
-				)}
-				{showColorFormatSelector && (
-					<div className={classes.selectContainer}>
-						<Select
-							value={this.state.colorFormat}
-							onChange={this.handleColorFormatChange}
-						>
-							<MenuItem value="hex">HEX - #ffff</MenuItem>
-							<MenuItem value="rgb">RGB - rgb(255, 255, 255)</MenuItem>
-							<MenuItem value="rgba">RGBA - rgba(255, 255, 255, 0.2)</MenuItem>
-						</Select>
-					</div>
-				)}
-				
+					)}
+					{showColorFormatSelector && (
+						<div className={classes.selectContainer}>
+							<Select
+								value={this.state.colorFormat}
+								onChange={this.handleColorFormatChange}
+							>
+								<MenuItem value="hex">HEX - #ffff</MenuItem>
+								<MenuItem value="rgb">RGB - rgb(255, 255, 255)</MenuItem>
+								<MenuItem value="rgba">
+									RGBA - rgba(255, 255, 255, 0.2)
+								</MenuItem>
+							</Select>
+						</div>
+					)}
+
 				<Snackbar
 					anchorOrigin={{
 						vertical: "bottom",

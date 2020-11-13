@@ -1,6 +1,8 @@
+import mediaQuery from '../helpers/getMediaQuery'
+
 const drawerWidth = 240;
 
-const styles = theme => ({
+export default {
   root: {
     display: "flex",
     backgroundColor: "white"
@@ -17,15 +19,17 @@ const styles = theme => ({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    height: "64px"
+    height: "64px",
+   
   },
   navBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
-    // transition: theme.transitions.create("margin", {
-    //   easing: theme.transitions.easing.easeOut,
-    //   duration: theme.transitions.duration.enteringScreen
-    // })
+    [mediaQuery.size("xs")]: {
+      display: "flex",
+      flexDirection: "column",
+      height:"120px"
+    }
   },
   menuButton: {
     marginLeft: 12,
@@ -33,7 +37,11 @@ const styles = theme => ({
   },
  navBtns:{
     "& a":{
-        textDecoration:"none"
+        textDecoration:"none",        
+    },
+    [mediaQuery.size("xs")]: {
+      display: "flex",
+      flexDirection: "row"
     }
  },
   button: {
@@ -45,7 +53,15 @@ const styles = theme => ({
     height: 48,
     padding: "0 30px",
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    [mediaQuery.size("sm")]: {
+      margin: "0 0.2rem",
+      padding: "0.3rem"
+    },
+    [mediaQuery.size("xs")]: {
+      margin: "0.5rem 0.5rem",
+      padding: "0.3rem"
+    }
+    
 },
-});
+};
 
-export default styles;

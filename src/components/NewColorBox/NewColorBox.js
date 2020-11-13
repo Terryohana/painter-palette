@@ -1,7 +1,7 @@
 import { withStyles } from "@material-ui/styles";
 import DeleteIcon from "@material-ui/icons/Delete";
 import React from "react";
-import styles from "../../styles/NewColorBox";
+import styles from "../../styles/NewColorBoxStyles";
 import getTextColor from "../../helpers/getTextColor";
 import { SortableElement } from "react-sortable-hoc";
 

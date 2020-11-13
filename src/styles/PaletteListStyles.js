@@ -26,7 +26,7 @@ export default {
             width: "75%"
         },
         [mediaQuery.size("xs")]:{
-            width: "60%"
+            width: "80%"
         },
     },
     palettes: {
@@ -53,7 +53,8 @@ export default {
             color: "white",
             "&:hover":{
                 color: "lightgray"
-            }
-        }
+            },
+        },
+       
     }
 };

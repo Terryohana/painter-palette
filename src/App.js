@@ -12,11 +12,8 @@ import NewPalette from "./components/NewPalette/NewPalette";
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			palettes: JSON.parse(
-				window.localStorage.getItem("palettes") || seedColorPalettes
-			),
-		};
+		const savedPalettes = JSON.parse(window.localStorage.getItem("palettes"));
+		this.state = { palettes: savedPalettes || seedColorPalettes };
 		this.savePalette = this.savePalette.bind(this);
 		this.deletePalette = this.deletePalette.bind(this);
 	}

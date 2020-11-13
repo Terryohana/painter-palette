@@ -1,17 +1,24 @@
+import mediaQuery from '../helpers/getMediaQuery'
+
 export default {
 	palette: {
 		height: "100vh",
 		display: "flex",
-		flexDirection: "column"
+		flexDirection: "column",
+		overflow: "hidden"
 	},
 	paletteColors: {
-		height: "calc(90%)",
+		height: "90%",
 		display: "flex",
 		overflow: "hidden",
 		flexWrap: "wrap",
 		alignItems: "flex-start",
 		justifyContent: "flex-start",
 		flex: "1",
+		[mediaQuery.size("lg")]:{
+			overflowY: "scroll",
+			width:"100%"
+        },
     },
     // Used for the container to go back to the previous page as well as the button
 	goBack: {
@@ -44,5 +51,17 @@ export default {
             outline: "none",
 			textDecoration: "none",
 		},
+		[mediaQuery.size("lg")]:{
+			width: "25%",
+      		height: "33.3333%"
+		},
+		[mediaQuery.size("md")]:{
+			width: "50%",
+			height: "20%"
+		},
+		[mediaQuery.size("xs")]:{
+			width: "100%",
+			height: "10%"
+        },
 	},
 };

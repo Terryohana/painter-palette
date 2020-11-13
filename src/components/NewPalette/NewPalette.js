@@ -30,6 +30,7 @@ class NewPalette extends Component {
 		this.addColorToPalette = this.addColorToPalette.bind(this);
 		this.removeColorFromPalette = this.removeColorFromPalette.bind(this);
 		this.saveNewPalette = this.saveNewPalette.bind(this);
+		this.clearPalette = this.clearPalette.bind(this)
 	}
 
 	handleDrawerOpen() {
@@ -58,6 +59,10 @@ class NewPalette extends Component {
 			colors: this.state.colors.filter((color) => color.name !== colorName),
 		});
 	}
+	//Clear all colors from the newly created palette
+	clearPalette(){
+		this.setState({ colors : [] });
+	}
 	//Save a newly created palette
 	saveNewPalette(paletteName) {
 		// let newName = this.state.paletteName
@@ -73,7 +78,7 @@ class NewPalette extends Component {
 
 	render() {
 		const { classes, palettes } = this.props;
-		const { drawerOpen, colors } = this.state;
+		const { drawerOpen, colors, isPaletteFull } = this.state;
 
 		return (
 			<div className={classes.root}>
@@ -105,7 +110,11 @@ class NewPalette extends Component {
 							Design Your Color Box
 						</Typography>
 
-						<ColorPicker colors={colors} addColor={this.addColorToPalette} />
+						<ColorPicker
+							colors={colors}
+							addColor={this.addColorToPalette}
+							clearPalette={this.clearPalette}
+						/>
 					</div>
 				</Drawer>
 				<main

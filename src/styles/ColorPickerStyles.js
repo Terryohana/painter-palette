@@ -1,7 +1,6 @@
 export default {
     root:{
         zIndex: '2',
-
     },
     button:{
 		width: "100%",
@@ -16,7 +15,17 @@ export default {
 	},
 	colorNameForm:{
 		width: "100%",
-		height: "70px",
-		marginTop: "1rem",
+		height: "70px"
+	
+	},
+	colorBoxSample:{
+		width: "100%",
+		height: "100px",
+		"& span":{
+			display:"flex",
+			justifyContent: "center",
+			alignItems:"center",
+			color: "white"
 		}
+	}
 }
