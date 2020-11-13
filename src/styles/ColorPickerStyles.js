@@ -3,10 +3,16 @@ export default {
         zIndex: '2',
 
     },
-    addBtn:{
+    button:{
 		width: "100%",
 		padding: "1rem",
-		fontSize: "1em"
+		marginTop: "1rem",
+		fontSize: "1em",
+		textTransform: "capitalize",
+	},
+	clearBtn:{
+		color: "white",
+		backgroundColor: "#b71c1c"
 	},
 	colorNameForm:{
 		width: "100%",

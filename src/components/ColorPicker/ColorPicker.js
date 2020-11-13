@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { ChromePicker } from "react-color";
 import { withStyles } from "@material-ui/styles";
+import DeleteIcon from "@material-ui/icons/Delete";
+import SaveIcon from "@material-ui/icons/Save";
+import Icon from "@material-ui/core/Icon";
+
 import Button from "@material-ui/core/Button";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
-
+import classNames from "classnames";
 import styles from "../../styles/ColorPickerStyles";
 
 class ColorPicker extends Component {
@@ -16,14 +20,14 @@ class ColorPicker extends Component {
 	componentDidMount() {
 		//Need to validate if the color is unique and if the color name entered
 		//is unique
-		ValidatorForm.addValidationRule("isColorNameUnique", (value) => 
+		ValidatorForm.addValidationRule("isColorNameUnique", (value) =>
 			this.props.colors.every(
 				({ name }) => name.toLowerCase() !== value.toLowerCase()
 			)
 		);
-		ValidatorForm.addValidationRule("isColorUnique", (value) => 
+		ValidatorForm.addValidationRule("isColorUnique", (value) =>
 			this.props.colors.every(({ color }) => color !== this.state.currentColor)
-		)
+		);
 	}
 
 	handleColorChange = (color) => {
@@ -60,8 +64,8 @@ class ColorPicker extends Component {
 						className={classes.colorNameForm}
 						label="Color Name"
 						onChange={this.handleFormChange}
-						variant='filled'
-						margin='normal'			
+						variant="filled"
+						margin="normal"
 						name="newColorName"
 						value={newColorName}
 						validators={["required", "isColorNameUnique", "isColorUnique"]}
@@ -72,7 +76,8 @@ class ColorPicker extends Component {
 						]}
 					/>
 					<Button
-						className={classes.addBtn}
+						startIcon={<SaveIcon />}
+						className={classes.button}
 						variant="contained"
 						type="submit"
 						color="primary"
@@ -81,6 +86,21 @@ class ColorPicker extends Component {
 						Add Color
 					</Button>
 				</ValidatorForm>
+				<Button
+					startIcon={<DeleteIcon />}
+					className={classNames(classes.button, classes.clearBtn)}
+					variant="contained"
+				>
+					Clear Palette
+				</Button>
+				<Button
+					startIcon={<Icon>send</Icon>}
+					className={classes.button}
+					variant="contained"
+					color="secondary"
+				>
+					Random Color
+				</Button>
 			</div>
 		);
 	}

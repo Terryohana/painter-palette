@@ -7,6 +7,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import { withStyles } from "@material-ui/core";
+import styles from '../../styles/PaletteNameFormStyles'
 
 class PaletteNameForm extends Component {
 	constructor(props) {
@@ -56,10 +58,8 @@ class PaletteNameForm extends Component {
 							Enter a title for your palette that best represents the colors you
 							chose
 						</DialogContentText>
-
 							<TextValidator
-								// className={classes.colorNameForm}
-								label="Palette Name"
+								className={classes.paletteNameInput}
 								onChange={this.handleFormChange}
 								variant="filled"
 								margin="normal"
@@ -84,4 +84,4 @@ class PaletteNameForm extends Component {
 	}
 }
 
-export default PaletteNameForm;
+export default withStyles(styles) (PaletteNameForm);
