@@ -1,8 +1,8 @@
 import { withStyles } from "@material-ui/styles";
+import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
-
 import DialogTitle from "@material-ui/core/DialogTitle";
 import React, { Component } from "react";
 import MiniPalette from "../MiniPalette/MiniPalette";
@@ -54,7 +54,9 @@ class PaletteList extends Component {
 				<div className={classes.container}>
 					<nav className={classes.nav}>
 						<h1>Painter Palette</h1>
-						<a href="/painter-palette/palette/new">Create Palette</a>
+						<Link to="/painter-palette/palette/new">
+							<span>Create Palette</span>
+						</Link>
 					</nav>
 					<div className={classes.palettes}>{paletteList}</div>
 				</div>

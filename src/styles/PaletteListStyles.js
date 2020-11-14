@@ -1,7 +1,7 @@
 import mediaQuery from '../helpers/getMediaQuery'
 export default {
     root: {
-        overflow:"scroll",
+        overflow:"auto",
         overflowX:"hidden",
         height: "100vh",
         display: "flex",
